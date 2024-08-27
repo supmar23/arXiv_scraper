@@ -1,1 +1,1 @@
-Script python that use arXiv APIs for search papers that match a specific query
+Script Python that use arXiv APIs for search papers that match a specific query, then save it in a jsonl file
