@@ -13,7 +13,6 @@ client = arxiv.Client(
 # create the search query
 search = arxiv.Search(
   query = "ti:\"prompt tuning\" OR ti:\"prompt-tuning\" OR ti:\"prefix tuning\" OR ti:\"prefix-tuning\" OR ti:\"prompt learning\" OR ti:\"soft prompt*\" OR ti:\"prompt* optimization\"",
-  #max_results = int(input("max number of results to show: ")),
   max_results = float('inf'), #API's limit is 300,000 results.
   sort_by = arxiv.SortCriterion.SubmittedDate,
   sort_order=arxiv.SortOrder.Ascending
