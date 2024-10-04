@@ -19,7 +19,7 @@ search = arxiv.Search(
 )
 
 year_start = int(input("year to search from (YYYY): "))
-#year_end = int(input("year to search to (YYYY): "))
+year_end = int(input("year to search to (YYYY): "))
 
 # Check if the JSONL file already exists
 file_path = "papers.jsonl"
@@ -51,7 +51,7 @@ for r in tqdm(results):
   for link in r.links:
     links.append(str(link))
 
-  if (r.published.year >= year_start):
+  if (r.published.year >= year_start and r.published.year <= year_end):
     # Append the data to the DataFrame
     new_row = pd.DataFrame([{
       "ID": str(r.entry_id),
@@ -81,4 +81,7 @@ print("Newly appended records:")
 print(new_records)
 
 # convert to jsonl file
-df.to_json("papers.jsonl", orient="records", lines=True)
+# df.to_json("papers.jsonl", orient="records", lines=True)
+
+# convert to csv file
+df.to_csv("./datasets/arXiv-papers-2021-only.csv", index=False)

@@ -27,6 +27,7 @@ $RECYCLE.BIN/
 # generated files
 *.json
 *.jsonl
+*.csv
 
 # Windows shortcuts
 *.lnk
